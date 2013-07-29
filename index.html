@@ -15,8 +15,12 @@
 
 			<nav class="header">
 				<ul class="nav nav-pills pull-right">
-					<li class="active"><a href="#/presentatie">Presentatie</a></li>
-					<li><a href="#/omahaproxy">OmahaProxy</a></li>
+					<li when-active class="active">
+						<a href="#/presentatie">Presentatie</a>
+					</li>
+					<li when-active>
+						<a href="#/omahaproxy">OmahaProxy</a>
+					</li>
 				</ul>
 				<h3 class="text-muted">AngularJS Bedenktijdje</h3>
 			</nav>
@@ -27,5 +31,7 @@
 
 		<script src="main.js"></script>
 		<script src="controllers/presenatie-ctrl.js"></script>
+		<script src="controllers/omahaproxy-ctrl.js"></script>
+		<script src="directives/when-active-directive.js"></script>
 	</body>
 </html>

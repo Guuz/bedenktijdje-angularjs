@@ -2,7 +2,7 @@ angular.module('omahaproxyApp', ['omahaproxyApp.controllers', 'omahaproxyApp.dir
 	.config(function ($routeProvider) {
 
 		$routeProvider
-			.when('/presenatie', {
+			.when('/presentatie', {
 				templateUrl: '/views/presentatie.html',
 				controller: 'PresentatieCtrl'
 			})
@@ -12,7 +12,7 @@ angular.module('omahaproxyApp', ['omahaproxyApp.controllers', 'omahaproxyApp.dir
 			})
 
 
-			.otherwise({ redirectTo: '/presenatie' });
+			.otherwise({ redirectTo: '/presentatie' });
 
 	});
 

@@ -13,3 +13,7 @@
 #logo {
 	margin-bottom: 30px;
 }
+
+nav.header a {
+	transition: background-color 0.3s ease;
+}
