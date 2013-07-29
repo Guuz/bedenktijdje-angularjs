@@ -1,0 +1,15 @@
+.header {
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 30px;
+}
+.header h3 {
+	line-height: 40px;
+}
+
+.jumbotron {
+	text-align: center;
+}
+
+#logo {
+	margin-bottom: 30px;
+}

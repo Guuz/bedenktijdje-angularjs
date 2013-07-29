@@ -3,14 +3,29 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Language" content="en" />
-		<title>AngularJS - Bedenktijdje</title>
+		<title>AngularJS Bedenktijdje</title>
 
+		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="main.css">
 
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
 	</head>
 	<body ng-app="omahaproxyApp">
+		<div class="container">
+
+			<nav class="header">
+				<ul class="nav nav-pills pull-right">
+					<li class="active"><a href="#/presentatie">Presentatie</a></li>
+					<li><a href="#/omahaproxy">OmahaProxy</a></li>
+				</ul>
+				<h3 class="text-muted">AngularJS Bedenktijdje</h3>
+			</nav>
+
+			<div ng-view></div>
+
+		</div>
 
 		<script src="main.js"></script>
+		<script src="controllers/presenatie-ctrl.js"></script>
 	</body>
 </html>
