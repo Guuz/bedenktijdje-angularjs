@@ -1,6 +1,6 @@
 angular.module('omahaproxyApp.controllers')
-	.controller('OmahaproxyCtrl', function() {
+	.controller('OmahaproxyCtrl', function( $scope, OmahaproxyService ) {
 
-		// TODO.
+		$scope.chromebooks = OmahaproxyService.get();
 
 	});
