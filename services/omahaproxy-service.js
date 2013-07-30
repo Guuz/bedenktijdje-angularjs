@@ -1,8 +1,5 @@
 angular.module('omahaproxyApp.services')
 	.factory('OmahaproxyService', function( $http, $q ) {
-		var deferred = $q.defer();
-
-
 
 		const TIMESTAMP_INDEX        = 0; // unused
 		const CHROMEOS_VERSION_INDEX = 1; // unused
@@ -12,8 +9,8 @@ angular.module('omahaproxyApp.services')
 		const HARDWARE_INDEX         = 5;
 
 		// Convert the raw CSV data to a usable object.
-		function rawDataToObject( rawData ) {
-			var lines = rawData.split('\n')
+		function responseToObject( response ) {
+			var lines = response.data.split('\n')
 			  , data = {}
 
 			// Scrap first and last lines
@@ -43,14 +40,7 @@ angular.module('omahaproxyApp.services')
 
 		return {
 			get: function() {
-				$http.get('https://cros-omahaproxy.appspot.com/all').then(function( res ) {
-					var ret = rawDataToObject( res.data );
-					deferred.resolve( ret );
-				}, function( error ) {
-					deferred.reject( error );
-				});
-
-				return deferred.promise;
+				return $http.get('https://cros-omahaproxy.appspot.com/all').then( responseToObject );
 			}
 		};
 	});
