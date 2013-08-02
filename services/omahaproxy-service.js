@@ -1,5 +1,5 @@
 angular.module('omahaproxyApp.services')
-	.factory('OmahaproxyService', function( $http, $q ) {
+	.factory('OmahaproxyService', function( $http ) {
 
 		const TIMESTAMP_INDEX        = 0; // unused
 		const CHROMEOS_VERSION_INDEX = 1; // unused
