@@ -38,9 +38,19 @@ angular.module('omahaproxyApp.services')
 
 
 
+		function objToArray( keyedObject ) {
+			return Object.keys( keyedObject ).map( function(key) {
+				var obj = keyedObject[key];
+				obj.name = key;
+				return obj;
+			});
+		}
+
+
+
 		return {
 			get: function() {
-				return $http.get('https://cros-omahaproxy.appspot.com/all').then( responseToObject );
+				return $http.get('https://cros-omahaproxy.appspot.com/all').then( responseToObject ).then( objToArray );
 			}
 		};
 	});
