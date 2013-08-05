@@ -1,5 +1,5 @@
 angular.module('omahaproxyApp.controllers')
-	.controller('OmahaproxyCtrl', function( $scope, $q, OmahaproxyService, GoogleImagesService ) {
+	.controller('OmahaproxyCtrl', function( $scope, $q, OmahaproxyService, GoogleImagesService, $timeout ) {
 
 		// Get a list of chromebooks from the OmahaProxy and add an image from every device.
 		$scope.chromebooks = OmahaproxyService.get().then( addImagesToChromebooks );
@@ -8,29 +8,41 @@ angular.module('omahaproxyApp.controllers')
 
 		// Add thumbnail images data to the chromebook data.
 		function addImagesToChromebooks( chromebooks ) {
-			return $q.all( chromebooks.map( addImage ) );
+			return chromebooks.map( addImage );
 		}
 
 
 
 		// Helper function to make the .map() more readable.
 		function addImage( chromebook ) {
-			// Fire of a search request and handle the returning data.
-			return GoogleImagesService.search( chromebook.name ).then(function( searchRes ) {
-				// Just take a random image, make a clone, modify it and return the new enriched chromebook object.
+			// Add a image promise to the chromebook object. Angular will handle this in the view and show the results there.
+			chromebook.image = GoogleImagesService.search( chromebook.name ).then(function( searchRes ) {
+				// Just take a random image and return the relevant data.
 				var result = searchRes.data.responseData.results
 				  , random = Math.floor( Math.random() * result.length )
 				  , image = result[ random ]
-				  , chromebookClone = angular.copy( chromebook )
 
-				chromebookClone.image = {
+				return {
 					src: image.tbUrl,
 					width: image.tbWidth,
 					height: image.tbHeight
 				}
+			}).then( debugDelay);
 
-				return chromebookClone;
-			});
+			return chromebook;
+		}
+
+
+
+		// Make the effect more visible by random delaying the promise.
+		function debugDelay( res ) {
+			var dfd = $q.defer();
+
+			$timeout(function() {
+				dfd.resolve(res);
+			}, Math.random() * 1000 + 500)
+
+			return dfd.promise;
 		}
 
 	});

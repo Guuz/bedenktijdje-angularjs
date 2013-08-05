@@ -22,6 +22,12 @@ nav.header a {
 	margin-bottom: 20px;
 }
 .chromebook .media-object {
-	width: 128px;
+	width: 140px;
 	height: auto;
+	min-height: 1px;
+	opacity: 0;
+	transition: 0.5s ease-out;
+}
+.chromebook .media-object.show {
+	opacity: 1;
 }

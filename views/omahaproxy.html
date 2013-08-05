@@ -1,9 +1,15 @@
 <div ng-repeat="cb in chromebooks | orderBy:'name'" class="chromebook">
 
 	<div class="media">
-		<a class="pull-left" href="#">
-			<img class="media-object" ng-src="{{ cb.image.src }}" height="{{ cb.image.height }}" width="{{ cb.image.width }}">
-		</a>
+		<span class="pull-left">
+			<img
+				fade-image
+				class="media-object"
+				ng-src="{{ cb.image.src }}"
+				height="{{ cb.image.height }}"
+				width="{{ cb.image.width }}"
+			>
+		</span>
 		<div class="media-body">
 			<h1 class="media-heading">{{ cb.name }}</h1>
 			<p>
