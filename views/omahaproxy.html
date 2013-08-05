@@ -1,12 +1,20 @@
-<div ng-repeat="chromebook in chromebooks">
+<div ng-repeat="cb in chromebooks | orderBy:'name'" class="chromebook">
 
 	<div class="media">
 		<a class="pull-left" href="#">
-			<img class="media-object img-thumbnail" ng-src="{{ chromebook.image.src }}" height="{{ chromebook.image.height }}">
+			<img class="media-object" ng-src="{{ cb.image.src }}" height="{{ cb.image.height }}" width="{{ cb.image.width }}">
 		</a>
 		<div class="media-body">
-			<h1 class="media-heading">{{ chromebook.name }}</h1>
-			<p>{{ chromebook | json }}</p>
+			<h1 class="media-heading">{{ cb.name }}</h1>
+			<p>
+				<span class="label label-success">Stable:</span> {{ cb.stable }}
+			</p>
+			<p>
+				<span class="label label-warning">Beta:</span> {{ cb.beta }}
+			</p>
+			<p>
+				<span class="label label-danger">Dev:</span> {{ cb.dev }}
+			</p>
 		</div>
 	</div>
 

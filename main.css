@@ -17,3 +17,11 @@
 nav.header a {
 	transition: background-color 0.3s ease;
 }
+
+.chromebook .media {
+	margin-bottom: 20px;
+}
+.chromebook .media-object {
+	width: 128px;
+	height: auto;
+}
