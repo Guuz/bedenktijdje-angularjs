@@ -1,1 +1,16 @@
+<div ng-repeat="chromebook in chromebooks">
+
+	<div class="media">
+		<a class="pull-left" href="#">
+			<img class="media-object img-thumbnail" ng-src="{{ chromebook.image.src }}" height="{{ chromebook.image.height }}">
+		</a>
+		<div class="media-body">
+			<h1 class="media-heading">{{ chromebook.name }}</h1>
+			<p>{{ chromebook | json }}</p>
+		</div>
+	</div>
+
+</div>
+
 <pre>{{ chromebooks | json}}</pre>
+
