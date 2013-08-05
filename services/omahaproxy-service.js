@@ -50,7 +50,7 @@ angular.module('omahaproxyApp.services')
 
 		return {
 			get: function() {
-				return $http.get('https://cros-omahaproxy.appspot.com/all').then( responseToObject ).then( objToArray );
+				return $http.get('https://cros-omahaproxy.appspot.com/all', { cache: true }).then( responseToObject ).then( objToArray );
 			}
 		};
 	});
