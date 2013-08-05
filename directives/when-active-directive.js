@@ -1,4 +1,4 @@
-angular.module('omahaproxyApp.controllers')
+angular.module('omahaproxyApp.directives')
 	.directive('whenActive', function ( $location ) {
 		return {
 			scope: true,
