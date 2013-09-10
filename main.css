@@ -25,9 +25,15 @@ nav.header a {
 	width: 140px;
 	height: auto;
 	min-height: 1px;
+
+	transition: opacity, -webkit-transform 0.2s ease-out;
+	transition-property: opacity, transform; /* Can't combine 'transform' with the prefixed variant above. */
 	opacity: 0;
-	transition: 0.5s ease-out;
+	-webkit-transform: scale(0);
+	transform: scale(0);
 }
 .chromebook .media-object.show {
+	-webkit-transform: scale(1);
+	transform: scale(1);
 	opacity: 1;
 }
