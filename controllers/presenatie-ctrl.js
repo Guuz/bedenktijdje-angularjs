@@ -1,6 +1,8 @@
 angular.module('omahaproxyApp.controllers')
-	.controller('PresentatieCtrl', function() {
+	.controller('PresentatieCtrl', function( $scope ) {
 
-		// TODO.
+		$scope.setRandom = function() {
+			$scope.exampleString = Math.random();
+		}
 
 	});

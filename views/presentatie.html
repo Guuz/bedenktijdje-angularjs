@@ -28,6 +28,8 @@
 		</ul>
 	</div>
 
+
+
 	<div class="col-12">
 		<h1>Drie fases</h1>
 		<div class="fase">
@@ -44,12 +46,38 @@
 		</div>
 	</div>
 
+
+
 	<div class="col-12">
 		<div class="well">
-			<h1>TODO</h1>
-			TODO
+			<h1>Data Binding</h1>
+			<input ng-model="exampleString" class="form-control input-lg" type="text" placeholder="Type something..." />
+			<p class="text-primary">{{ exampleString }}</p>
+
+			<button type="button" class="btn btn-primary" ng-click="setRandom()">Random</button>
 		</div>
 	</div>
+
+
+
+	<div class="col-12">
+		<form class="well" name="validationExample">
+			<h1>Form Validatie</h1>
+			<input ng-model="exampleInt" class="form-control input-lg" type="number" name="exampleIntField" required max="9" />
+			<div ng-show="validationExample.$dirty">
+				<p class="text-primary">{{ exampleInt }}</p>
+				<p class="text-success" ng-show="validationExample.exampleIntField.$valid">Valid</p>
+				<p class="text-danger" ng-show="validationExample.exampleIntField.$invalid">Invalid</p>
+				<p class="text-warning" ng-show="validationExample.exampleIntField.$error.number">Moet een nummer zijn</p>
+				<p class="text-warning" ng-show="validationExample.exampleIntField.$error.max">Mag niet meer dan 9 zijn</p>
+				<p class="text-danger" ng-show="validationExample.exampleIntField.$error.required">Verplicht veld</p>
+			</div>
+
+			<p class="text-muted">{{ validationExample.exampleIntField.$error | json }}</p>
+		</form>
+	</div>
+
+
 
 	<div class="col-12">
 		<h1>Form validatie</h1>
