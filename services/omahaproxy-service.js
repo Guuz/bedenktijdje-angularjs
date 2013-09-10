@@ -1,12 +1,12 @@
 angular.module('omahaproxyApp.services')
 	.factory('OmahaproxyService', function( $http ) {
 
-		const TIMESTAMP_INDEX        = 0; // unused
-		const CHROMEOS_VERSION_INDEX = 1; // unused
-		const CHROME_VERSION_INDEX   = 2;
-		const APPID_INDEX            = 3; // unused
-		const TRACK_INDEX            = 4;
-		const HARDWARE_INDEX         = 5;
+		var TIMESTAMP_INDEX        = 0; // unused
+		var CHROMEOS_VERSION_INDEX = 1; // unused
+		var CHROME_VERSION_INDEX   = 2;
+		var APPID_INDEX            = 3; // unused
+		var TRACK_INDEX            = 4;
+		var HARDWARE_INDEX         = 5;
 
 		// Convert the raw CSV data to a usable object.
 		function responseToObject( response ) {
