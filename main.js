@@ -1,4 +1,4 @@
-angular.module('omahaproxyApp', ['omahaproxyApp.controllers', 'omahaproxyApp.directives', 'omahaproxyApp.filters'])
+angular.module('omahaproxyApp', ['ngRoute', 'omahaproxyApp.controllers', 'omahaproxyApp.directives', 'omahaproxyApp.filters'])
 	.config(function ($routeProvider) {
 
 		$routeProvider
