@@ -1,3 +1,7 @@
+body {
+	font-size: 18px;
+}
+
 .header {
 	border-bottom: 1px solid #e5e5e5;
 	margin-bottom: 30px;
@@ -16,6 +20,17 @@
 
 nav.header a {
 	transition: background-color 0.3s ease;
+}
+
+.presentatie hr {
+	margin: 10px 0;
+}
+.presentatie .fase:not(:last-child) {
+	min-height: 800px;
+}
+.presentatie .fase img {
+	max-width: 50%;
+	height: auto;
 }
 
 .chromebook .media {
@@ -70,64 +85,64 @@ nav.header a {
 
 
 @-webkit-keyframes enter {
-    from {
-        opacity: 0;
-        height: 0px;
-        left: -70px;
-    }
-    75% {
-        left: 15px;
-    }
-    to {
-        opacity: 1;
-        height: 140px;
-        left: 0px;
-    }
+	from {
+		opacity: 0;
+		height: 0px;
+		left: -70px;
+	}
+	75% {
+		left: 15px;
+	}
+	to {
+		opacity: 1;
+		height: 140px;
+		left: 0px;
+	}
 }
 @keyframes enter {
-    from {
-        opacity: 0;
-        height: 0px;
-        left: -70px;
-    }
-    75% {
-        left: 15px;
-    }
-    to {
-        opacity: 1;
-        height: 140px;
-        left: 0px;
-    }
+	from {
+		opacity: 0;
+		height: 0px;
+		left: -70px;
+	}
+	75% {
+		left: 15px;
+	}
+	to {
+		opacity: 1;
+		height: 140px;
+		left: 0px;
+	}
 }
 
 
 @-webkit-keyframes leave {
-    to {
-        opacity: 0;
-        height: 0px;
-        left: -70px;
-    }
-    25% {
-        left: 15px;
-    }
-    from {
-        opacity: 1;
-        height: 140px;
-        left: 0px;
-    }
+	to {
+		opacity: 0;
+		height: 0px;
+		left: -70px;
+	}
+	25% {
+		left: 15px;
+	}
+	from {
+		opacity: 1;
+		height: 140px;
+		left: 0px;
+	}
 }
 @keyframes leave {
-    to {
-        opacity: 0;
-        height: 0px;
-        left: -70px;
-    }
-    25% {
-        left: 15px;
-    }
-    from {
-        opacity: 1;
-        height: 140px;
-        left: 0px;
-    }
+	to {
+		opacity: 0;
+		height: 0px;
+		left: -70px;
+	}
+	25% {
+		left: 15px;
+	}
+	from {
+		opacity: 1;
+		height: 140px;
+		left: 0px;
+	}
 }
