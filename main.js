@@ -8,7 +8,13 @@ angular.module('omahaproxyApp', ['ngRoute', 'omahaproxyApp.controllers', 'omahap
 			})
 			.when('/omahaproxy', {
 				templateUrl: 'views/omahaproxy.html',
-				controller: 'OmahaproxyCtrl'
+				controller: 'OmahaproxyCtrl',
+				// Resolve needed data so the view can render without hiccups.
+				resolve: {
+					resolvedChromebooks: function( OmahaproxyService ) {
+						return OmahaproxyService.get();
+					}
+				}
 			})
 
 

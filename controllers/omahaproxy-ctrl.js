@@ -1,20 +1,20 @@
 angular.module('omahaproxyApp.controllers')
-	.controller('OmahaproxyCtrl', function( $scope, $q, OmahaproxyService, GoogleImagesService, $timeout ) {
+	.controller('OmahaproxyCtrl', function( $scope, $q, resolvedChromebooks, GoogleImagesService, $timeout ) {
 
-		// Get a list of chromebooks from the OmahaProxy and add an image from every device.
-		$scope.chromebooks = OmahaproxyService.get().then( addImagesToChromebooks );
+		// Get a resolved list of chromebooks from the router and add an image from every device.
+		$scope.chromebooks = addImagePromiseToChromebooks( resolvedChromebooks );
 
 
 
 		// Add thumbnail images data to the chromebook data.
-		function addImagesToChromebooks( chromebooks ) {
-			return chromebooks.map( addImage );
+		function addImagePromiseToChromebooks( chromebooks ) {
+			return chromebooks.map( addImagePromise );
 		}
 
 
 
 		// Helper function to make the .map() more readable.
-		function addImage( chromebook ) {
+		function addImagePromise( chromebook ) {
 			// Add a image promise to the chromebook object. Angular will handle this in the view and show the results there.
 			chromebook.image = GoogleImagesService.search( chromebook.name ).then(function( searchRes ) {
 				// Just take a random image and return the relevant data.
@@ -27,7 +27,7 @@ angular.module('omahaproxyApp.controllers')
 					width: image.tbWidth,
 					height: image.tbHeight
 				}
-			}).then( debugDelay);
+			}).then( debugDelay );
 
 			return chromebook;
 		}
