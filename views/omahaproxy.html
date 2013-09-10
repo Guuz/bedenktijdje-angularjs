@@ -1,4 +1,8 @@
-<div ng-repeat="cb in chromebooks | orderBy:'name'" class="chromebook">
+<input ng-model="filterString" class="form-control input-lg pull-right chromebookFilter" type="search" placeholder="filter..." />
+
+
+
+<div ng-repeat="cb in chromebooks | orderBy:'name' | filter:filterString" class="chromebook">
 
 	<div class="media">
 		<span class="pull-left">
