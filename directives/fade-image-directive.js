@@ -4,8 +4,9 @@ angular.module('omahaproxyApp.directives')
 		return {
 			link: function(scope, element, attrs) {
 				// 'element' is a jqLite element so we can use jQuery's 'on()'.
-				element.on("load" , function(e){
+				element.on('load' , function(e){
 					element.addClass("show");
+					element.off('load');
 				});
 			}
 		}
