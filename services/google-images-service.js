@@ -1,6 +1,7 @@
 angular.module('omahaproxyApp.services')
 	.factory('GoogleImagesService', function( $http, $cacheFactory ) {
-		var cache = $cacheFactory('chromebookImages');
+		// Make a cache for internal use.
+		var cache = $cacheFactory('googleImagesPromises');
 
 		return {
 			search: function( param ) {
