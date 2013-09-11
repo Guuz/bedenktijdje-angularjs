@@ -12,7 +12,7 @@ angular.module('omahaproxyApp.services')
 				if( cachedPromise ) {
 					return cachedPromise;
 				} else {
-					// No cached version. Make a request, cache that and return the promise.
+					// No cached version. Make a request, cache it and return the promise.
 					var promise = $http.jsonp('https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q='+ param +'&callback=JSON_CALLBACK');
 					cache.put( param, promise );
 					return promise;

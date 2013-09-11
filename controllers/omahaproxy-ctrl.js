@@ -1,7 +1,7 @@
 angular.module('omahaproxyApp.controllers')
-	.controller('OmahaproxyCtrl', function( $scope, $q, resolvedChromebooks, GoogleImagesService, $timeout ) {
+	.controller('OmahaproxyCtrl', function( $scope, resolvedChromebooks, GoogleImagesService, $q, $timeout ) {
 
-		// Get a resolved list of chromebooks from the router and add an image from every device.
+		// Get a resolved list of chromebooks from the router and add an image for every device.
 		$scope.chromebooks = addImagePromiseToChromebooks( resolvedChromebooks );
 
 

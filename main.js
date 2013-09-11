@@ -16,11 +16,10 @@ angular.module('omahaproxyApp', ['ngRoute', 'ngAnimate', 'omahaproxyApp.controll
 					}
 				}
 			})
-
-
 			.otherwise({ redirectTo: '/presentatie' });
 
 	});
+
 
 
 angular.module('omahaproxyApp.controllers', ['omahaproxyApp.services']);
