@@ -10,7 +10,7 @@ describe('Google Images Service', function(){
 	beforeEach(module('omahaproxyApp.services'));
 
 	beforeEach(inject(function($injector) {
-		// Get instances from the injector.
+		// Get instances from the injector and store them outside this scope for later use.
 		$httpBackend = $injector.get('$httpBackend');
 		GoogleImagesService = $injector.get('GoogleImagesService');
 		$rootScope = $injector.get('$rootScope');
